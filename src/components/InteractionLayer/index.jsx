@@ -41,8 +41,7 @@ const parserOptions = {
       )
     } else {
       if (domNode.data) {
-        // console.log(domNode.data)
-        // 
+        // TODO: handle line with space at the end
         const words = domNode.data.split(" ")
         const mapWords = words.map((word) => (
           <>
