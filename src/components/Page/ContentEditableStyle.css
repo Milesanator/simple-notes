@@ -1,0 +1,15 @@
+
+.ContentEditable {
+  background: #fff;
+  border: 1px solid papayawhip;
+  border-radius: 4px;
+  color: #000;
+  cursor: text;
+  min-height: 400px;
+  padding: 24px;
+  width: 600px;
+}
+
+.ContentEditable:focus {
+  outline: 1px dotted #6197E8;
+}

@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "eslint-plugin-jest": "^22.15.0",
+    "html-react-parser": "^0.9.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
+    "react-contenteditable": "^3.3.2",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
     "styled-components": "^4.3.2"

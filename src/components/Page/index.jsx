@@ -1,15 +1,25 @@
-import React, { useState } from 'react'
-import Editor from 'components/Editor'
+import React, { useState, useRef } from 'react'
+import ContentEditable from 'react-contenteditable'
+import InteractionLayer from 'components/InteractionLayer'
 import PageContainer from './Page.css'
+import parseHtml from 'html-react-parser'
+import './ContentEditableStyle.css'
 
 const Page = () => {
   const editorValue = useEditorValue()
+  const contentEditable = useRef(null)
 
   return (
     <PageContainer>
-      <Editor
-        value={editorValue.value}
+      <ContentEditable
+        innerRef={contentEditable}
+        html={editorValue.value}
         onChange={editorValue.onChange}
+        className="ContentEditable"
+        spellcheck="false"
+      />
+      <InteractionLayer
+        html={editorValue.value}
       />
     </PageContainer>
   )
