@@ -14,11 +14,11 @@ const EditorContainer = styled.div`
   }  
 `
 
-const EditorLine = styled.div`
-  color: blue;
+const EditorEditableContent = styled.div`
+
 `
 
 export {
   EditorContainer,
-  EditorLine
+  EditorEditableContent
 }

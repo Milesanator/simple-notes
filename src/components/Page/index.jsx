@@ -1,38 +1,30 @@
-import React, { Component } from 'react'
-import Editor from '../Editor'
+import React, { useState } from 'react'
+import Editor from 'components/Editor'
 import PageContainer from './Page.css'
 
-class Page extends Component {
-  constructor(props) {
-    super(props)
+const Page = () => {
+  const editorValue = useEditorValue()
 
-    this.contentEditable = React.createRef()
+  return (
+    <PageContainer>
+      <Editor
+        value={editorValue.value}
+        onChange={editorValue.onChange}
+      />
+    </PageContainer>
+  )
+}
 
-    this.state = {
-      editorValue: ''
-    }
+function useEditorValue() {
+  const [editorValue, setEditorValue] = useState('')
 
-    this.handleChange = this.handleChange.bind(this)
+  function handleChangeEditor(e) {
+    setEditorValue(e.target.value)
   }
 
-  handleChange(e) {
-    this.setState({
-      editorValue: e.target.value
-    })
-  }
-
-  render() {
-    const { editorValue } = this.state
-
-    return (
-      <PageContainer>
-        <Editor
-          innerRef={this.contentEditable}
-          html={editorValue}
-          onChange={this.handleChange}
-        />
-      </PageContainer>
-    )
+  return {
+    value: editorValue,
+    onChange: handleChangeEditor
   }
 }
 
